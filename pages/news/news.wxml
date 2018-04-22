@@ -1,0 +1,41 @@
+<!--pages/news/news.wxml-->
+<!--一定要引入模板，才能使用  -->
+<import src="news-template/news-template.wxml" />
+
+<view class="news-container">
+    <swiper autoplay='true' interval='2000' circular='true'>
+      <swiper-item>
+          <image src="../images/cbd.jpg"></image>
+      </swiper-item>
+       <swiper-item>
+          <image src="../images/muwu.jpg"></image>
+      </swiper-item>
+       <swiper-item>
+          <image src="../images/shuijiao.jpg"></image>
+      </swiper-item>
+    </swiper>
+    <block wx:for="{{useData}}" wx:for-item="item" wx:key="key">
+        <!--使用模板  -->
+       <!--
+       数据本来是这样
+       item = {
+           "newsid":0,
+            "authicon":"../images/icon.gif",
+            "authordate":"2017-09-09",
+       }
+
+       ...item  把数据展开之后，数据变为
+             "newsid":0,
+            "authicon":"../images/icon.gif",
+            "authordate":"2017-09-09",
+
+            所以在遍历数据时不需要再使用item.xxx（字段名）而是直接使用xxx（字段名）
+
+         -->
+         <!--跳转到详情页，不能给tmplate直接添加点击事件  给tempalte包裹一层view，就可添加点击事件-->
+           <!-- 添加一个自定义属性 data-newsid  获取newsid -->
+        <view bindtap='goNewsDetail' data-newsid="{{item.newsid}}">
+            <template is="news-template" data="{{...item}}" />
+        </view>
+    </block>  
+</view>

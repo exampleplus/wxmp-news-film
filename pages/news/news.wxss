@@ -1,0 +1,16 @@
+/* pages/news/news.wxss */
+/*引入模板的样式*/
+@import "news-template/news-template.wxss";
+.news-container{
+  display: flex;
+  flex-direction: column;
+}
+.news-container swiper{
+  width:100%;
+}
+/*图片沾全屏*/
+
+.news-container swiper image{
+  width:100%;
+}
+

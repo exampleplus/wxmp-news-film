@@ -1,0 +1,9 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+<!--image有默认宽高  -->
+  <image></image>
+  <text>hello Mr chen</text>
+  <view class="btn" bindtap='goNewsTap'>
+    <text>豆瓣电影</text>
+  </view>
+</view>

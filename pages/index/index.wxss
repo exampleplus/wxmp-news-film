@@ -1,0 +1,12 @@
+/* pages/index/index.wxss */
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.btn{
+  margin-top:20rpx;
+  border:1px solid #f0f;
+  padding:10px 30px;
+  color:#f0f;
+}

@@ -1,0 +1,23 @@
+/*文章样式  */
+.articlelist{
+  margin-bottom:50rpx;
+}
+.icon{
+  width:80rpx;
+  height:80rpx;
+  border-radius: 50%;
+}
+.author-icon{
+  width:100%;
+}
+.sc,.xi{
+  width:100rpx;
+  height:100rpx;
+}
+.author-name{
+  margin-left:30rpx;
+  margin-right:30rpx;
+}
+.author-time{
+  margin-bottom: 40rpx;
+}

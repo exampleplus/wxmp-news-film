@@ -1,0 +1,23 @@
+<!--pages/news/news-detail/news-detail.wxml-->
+<view class='container'>
+    <image src="{{articleImg}}" class="top-img"></image>
+    <view class='author-data'>
+        <image class="avatar" src="{{authicon}}"></image>
+        <text class="author">{{authorName}}</text>
+         <text class="author">{{authordate}}</text>
+         <image class="music" src="../../images/music.png"></image>
+    </view>
+    <text class="title">111111111111111111111</text>
+    <view class='tool'>
+        <view class="circle-img">
+            <text>收藏</text>
+           
+             <image src="../../images/sc-selected.png" wx:if="{{collected}}" catchtap='collectTap'></image>
+              <image src="../../images/sc.png" wx:else catchtap='collectTap'></image>
+             <text>评论</text>
+            <image src="../../images/sc2.png" class="share-img"></image>
+        </view>
+        <view class='horizon'></view>
+    </view>
+    <text class="detai">{{articleText}}</text>
+</view>
