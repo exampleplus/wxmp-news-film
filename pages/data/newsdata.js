@@ -8,7 +8,12 @@ var initData = [
     "articleImg":"http://img3.imgtn.bdimg.com/it/u=1330812405,3299682436&fm=27&gp=0.jpg",
     "articleText":"内容1111内容1111内容1111内容1111内容1111内容1111内容1111内容1111内容1111内容1111内容1111内容1111内容1111内容1111",
     "articleLikeComment":2,
-    "articleDesc":45
+    "articleDesc":45,
+    "music":{
+      "url":"http://iwen.wiki/sxtstu/music/iamyou.mp3",
+      "title":"something like you",
+      "coverImg":""
+    }
   },
   {
     "newsid": 1,
@@ -19,7 +24,12 @@ var initData = [
     "articleImg": "http://img5.imgtn.bdimg.com/it/u=2965043783,2590502488&fm=27&gp=0.jpg",
     "articleText": "内容22222内容22222内容22222内容22222内容22222内容22222内容22222内容22222内容22222内容22222内容22222内容22222内容22222",
     "articleLikeComment": 12,
-    "articleDesc": 30
+    "articleDesc": 30,
+    "music": {
+      "url": "http://iwen.wiki/sxtstu/music/iamyou.mp3",
+      "title": "shape of you",
+      "coverImg": ""
+    }
   },
   {
     "newsid": 2,
@@ -30,7 +40,12 @@ var initData = [
     "articleImg": "http://img2.imgtn.bdimg.com/it/u=635393165,409749867&fm=200&gp=0.jpg",
     "articleText": "内容33333333内容33333333内容33333333内容33333333内容33333333内容33333333内容33333333内容33333333内容33333333内容33333333内容33333333",
     "articleLikeComment": 23,
-    "articleDesc": 56
+    "articleDesc": 56,
+    "music": {
+      "url": "http://iwen.wiki/sxtstu/music/iamyou.mp3",
+      "title": "shape of you",
+      "coverImg": ""
+    }
   }
 ]
 //把数据导出

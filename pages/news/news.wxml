@@ -5,13 +5,13 @@
 <view class="news-container">
     <swiper autoplay='true' interval='2000' circular='true'>
       <swiper-item>
-          <image src="../images/cbd.jpg"></image>
+          <image src="http://b.hiphotos.baidu.com/image/h%3D300/sign=55c199bf232eb938f36d7cf2e56385fe/d0c8a786c9177f3e662f66537ccf3bc79f3d5650.jpg"></image>
       </swiper-item>
        <swiper-item>
-          <image src="../images/muwu.jpg"></image>
+          <image src="http://img4.imgtn.bdimg.com/it/u=395856840,2207432848&fm=27&gp=0.jpg"></image>
       </swiper-item>
        <swiper-item>
-          <image src="../images/shuijiao.jpg"></image>
+          <image src="http://img5.imgtn.bdimg.com/it/u=1552448706,1264947431&fm=27&gp=0.jpg"></image>
       </swiper-item>
     </swiper>
     <block wx:for="{{useData}}" wx:for-item="item" wx:key="key">

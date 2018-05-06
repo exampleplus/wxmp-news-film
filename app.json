@@ -2,7 +2,9 @@
   "pages":[
     "pages/index/index",
     "pages/news/news",
-    "pages/news/news-detail/news-detail"
+    "pages/news/news-detail/news-detail",
+    "pages/movie/movie",
+    "pages/movie/movie-more/movie-more"
   ],
   "window":{
     "navigationBarBackgroundColor": "#ffffff",
@@ -10,5 +12,21 @@
     "navigationBarTitleText": "豆瓣电影",
     "backgroundColor": "#eeeeee",
     "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "list": [
+        {
+        "pagePath": "pages/news/news",
+        "text": "新闻",
+        "iconPath": "pages/images/gray-star.png",
+        "selectedIconPath": "pages/images/star.png"
+      },
+      {
+        "pagePath": "pages/movie/movie",
+        "text": "电影",
+        "iconPath": "pages/images/gray-star.png",
+        "selectedIconPath": "pages/images/star.png"
+      }
+    ]
   }
 }

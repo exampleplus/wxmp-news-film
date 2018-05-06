@@ -39,8 +39,6 @@ Page({
       wx.setStorageSync("newsCollect", newsCollect)
     }
   },
-
-  
   collectTap:function(event){
     //console.log(this.data.newsid);
      var newsCollect = wx.getStorageSync("newsCollect");//所有数据的集合
@@ -53,6 +51,48 @@ Page({
      //更新视图
      this.setData({
        collected:newCollect
+     });
+     wx.showToast({
+       title: newCollect?"收藏成功":"取消收藏",
+       icon: 'success',
+       duration: 1000
+     })
+  },
+  //分享
+  onShareAppMessage: function (res) {
+    return {
+      title: newsData.initData[this.data.newsid].title,
+      path: '/pages/news/news-detail/news-detail',
+      success: function (res) {
+        // 转发成功
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
+  },
+  //播放音乐
+ 
+  playermusic:function(e){
+     //播放音乐前先判断是否在播放
+     var that = this;
+     wx.getBackgroundAudioPlayerState({
+       success: function (res) {
+         console.log(res)
+         var status = res.status
+        if(status != 1){
+          console.log(1)
+            //没有在播放
+            wx.playBackgroundAudio({
+              dataUrl: newsData.initData[that.data.newsid].music.url,
+              title: newsData.initData[that.data.newsid].music.title,
+              coverImgUrl: newsData.initData[that.data.newsid].music.coverImg
+            })
+          }else{
+            console.log(2)
+            wx.pauseBackgroundAudio();
+          }
+       }
      })
   }
 })

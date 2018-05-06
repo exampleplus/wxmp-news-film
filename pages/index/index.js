@@ -16,8 +16,8 @@ Page({
   },
 
   goNewsTap:function(event){
-    wx.navigateTo({
-      url: '../news/news'
+    wx.switchTab({
+      url: '../news/news',
     })
   },
   /**

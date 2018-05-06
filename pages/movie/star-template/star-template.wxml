@@ -1,0 +1,16 @@
+<template name="starTemplate">
+  <view class="stars-container">
+    <view class="stars">
+      <!-- <image src="../images/star.png"> </image>
+      <image src="../images/star.png"> </image>
+      <image src="../images/star.png"> </image>
+      <image src="../images/star.png"> </image>
+      <image src="../images/star.png"> </image> -->
+      <block wx:for="{{stars}}" wx:for-item="item" wx:key="key">
+           <image src="{{item?'../images/star.png':'../images/gray-star.png'}}"> </image>
+      </block>
+    </view>
+    <!--接收movie-tempalte的数据  -->
+    <text class="star-score">{{average}}</text>
+  </view>
+</template>

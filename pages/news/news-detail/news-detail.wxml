@@ -5,17 +5,17 @@
         <image class="avatar" src="{{authicon}}"></image>
         <text class="author">{{authorName}}</text>
          <text class="author">{{authordate}}</text>
-         <image class="music" src="../../images/music.png"></image>
+         <image class="music" bindtap="playermusic" src="../../images/music.png"></image>
     </view>
     <text class="title">111111111111111111111</text>
     <view class='tool'>
         <view class="circle-img">
             <text>收藏</text>
            
-             <image src="../../images/sc-selected.png" wx:if="{{collected}}" catchtap='collectTap'></image>
-              <image src="../../images/sc.png" wx:else catchtap='collectTap'></image>
+             <image src="http://a.hiphotos.baidu.com/image/h%3D300/sign=fbbf7d69ad8b87d64f42ad1f37092860/eaf81a4c510fd9f99f899a31292dd42a2934a4c8.jpg" wx:if="{{collected}}" catchtap='collectTap'></image>
+              <image src="http://c.hiphotos.baidu.com/image/h%3D300/sign=9f9323341c38534393cf8121a312b01f/e1fe9925bc315c609e11bbb781b1cb13485477e6.jpg" wx:else catchtap='collectTap'></image>
              <text>评论</text>
-            <image src="../../images/sc2.png" class="share-img"></image>
+            <image src="http://c.hiphotos.baidu.com/image/h%3D300/sign=84337ed7c7134954611eee64664f92dd/ac6eddc451da81cbe337459b5e66d01608243197.jpg" class="share-img"></image>
         </view>
         <view class='horizon'></view>
     </view>

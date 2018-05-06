@@ -10,10 +10,10 @@
         <text>{{articleText}}</text>
         <view>
              <text>收藏</text>
-            <image src='../images/sc.png' class="sc"></image>
+            <image src='http://img5.imgtn.bdimg.com/it/u=1552448706,1264947431&fm=27&gp=0.jpg' class="sc"></image>
             <text>{{articleLikeComment}}</text>
             <text style="margin-left:30rpx;">评论</text>
-            <image src='../images/xi.png' class="xi"></image>
+            <image src='http://img0.imgtn.bdimg.com/it/u=2667849227,3791619821&fm=27&gp=0.jpg' class="xi"></image>
             <text>{{articleDesc}}</text>
         </view>
       </view>
