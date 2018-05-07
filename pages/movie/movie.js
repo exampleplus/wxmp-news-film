@@ -68,6 +68,14 @@ Page({
       wx.navigateTo({
         url: 'movie-more/movie-more?categoryName=' + categoryName
       })
+  },
+  //跳转到详情页
+
+  goMovieDetailTap: function (e) {
+    var movieid = e.currentTarget.dataset.movieid
+    wx.navigateTo({
+      url: "movie-detail/movie-detail?movieid="+movieid    
+      })
   }
 
 })

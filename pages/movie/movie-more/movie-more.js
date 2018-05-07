@@ -8,7 +8,10 @@ Page({
    */
   data: {
     categoryName:"",
-    movies:[]
+    movies:[],
+    totalCount:0,
+    totalMovies:[],
+    isEmpty:true
   },
 
   /**
@@ -33,9 +36,31 @@ Page({
          allUrl = publicUrl + "/v2/movie/top250"
       break;
     }
+    this.setData({
+      allUrl:allUrl
+    })
     //进行网络请求
     utils.http(allUrl,this.callback);
+    wx.showNavigationBarLoading();
   },
+
+
+  //上拉加载
+  onReachBottom: function (e) {
+    //上来刷新的url需要变化1：start：0，2：start：20 3：start：40，count：20
+    var nextUrl = this.data.allUrl + "?start=" + this.data.totalCount + "&count=20";
+    utils.http(nextUrl, this.callback);
+    wx.showNavigationBarLoading();
+  },
+
+  //下来刷新
+  onPullDownRefresh: function () {
+    var refreshUrl = this.data.allUrl;
+    utils.http(refreshUrl, this.callback);
+    this.data.totalMovies = [];
+    this.data.isEmpty = true;
+  },
+
 //处理数据
   callback: function (res) {
     //处理数据
@@ -57,15 +82,34 @@ Page({
       }
       movies.push(temp);
     }
+    var totalMovies = [];
+    // concat合并数组 是不是第一次进入，是:不需要累加 ；非第一次进入：累加
+    if (!this.data.isEmpty) {
+      //非第一次进入   累加
+      totalMovies = this.data.movies.concat(movies)
+    }else{
+      totalMovies = movies;
+      this.data.isEmpty = false;
+    }
     this.setData({
-      movies:movies
+      movies: totalMovies
     })
+    this.data.totalCount += 20 ;
+    wx.hideNavigationBarLoading();
   },
   //设置导航条
   onReady: function () {
     wx.setNavigationBarTitle({
       title: this.data.categoryName
       })
+  },
+  //跳转到详情页
+
+  goMovieDetailTap: function (e) {
+    var movieid = e.currentTarget.dataset.movieid
+    wx.navigateTo({
+      url: "../movie-detail/movie-detail?movieid=" + movieid
+    })
   }
-  
+
 })
