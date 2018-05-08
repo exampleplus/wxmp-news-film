@@ -27,7 +27,41 @@ function convertStars(stars){
     }
   })
 }
+//演员名字 使用”/“分割开
+
+function covertCasts(casts){
+  var castsJoin = "";
+  var castsJoinFinal = ""
+  for(var dic in casts){
+    castsJoin = castsJoin + casts[dic].name + " / ";
+   
+  }
+  castsJoinFinal =  castsJoin = castsJoin.substring(0,castsJoin.length-3);
+  return castsJoin;
+}
+
+
+//处理演员信息  头像加名字
+function covertActor(casts){
+  //声明一个数组 存放演员名字和头像
+
+  var castaArray = [];
+  for(var j in casts){
+    var cast = {
+      img: casts[j].avatars ? casts[j].avatars.large:"",
+      name:casts[j].name
+    }
+    castaArray.push(cast)
+  } 
+
+  console.log(castaArray)
+
+  return castaArray;
+
+}
 module.exports = {
   convertStars:convertStars,
-  http: http
+  http: http,
+  covertCasts: covertCasts,
+  covertActor: covertActor
 }

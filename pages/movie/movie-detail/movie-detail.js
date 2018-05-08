@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    movie:{}
   },
 
   /**
@@ -20,7 +20,7 @@ Page({
     utils.http(detailMovieUrl,this.callback)
   },
   callback:function(data){
-    //console.log(data)
+    console.log(data)
     /**
      * 电影图片 movieimg
      * 制片地区，国家 country
@@ -43,8 +43,7 @@ Page({
    // 处理导演数据
    var director = {
      avatars:"",
-     name:"",
-     id:""
+     name:""
    }
    if(data.directors[0] != null){
      if (data.directors[0].avatars != null){
@@ -60,15 +59,17 @@ Page({
       commentCount: data.comments_count,
       year: data.year,
       generes:data. genres,
-      stars : data.rating.stars,
+      stars: utils.convertStars(data.rating.stars),
       score: data.rating.average,
-      director : data.directors,
-      casts: data.casts,
+      director: director,
+      casts: utils.covertCasts(data.casts),
+      castsInfo: utils.covertActor(data.casts),
       summary : data.summary
     }
-    console.log(temp)
-
+    console.log(temp);
+    this.setData({
+      movie:temp
+    })
   }
-
 
 })

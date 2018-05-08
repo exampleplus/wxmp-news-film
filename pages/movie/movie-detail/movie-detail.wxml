@@ -1,2 +1,48 @@
-<!--pages/movie/movie-detail/movie-detail.wxml-->
-<text>pages/movie/movie-detail/movie-detail.wxml</text>
+<import src="../star-template/star-template.wxml" />
+<view class="container">
+  <image class="head-img" src="{{movie.movieimg}}" mode='aspectFill'></image>
+ 
+  <view class="head-img-hover" data-src="{{movie.movieimg}}">
+    <text class="sub-title">{{movie.country+"."+movie.year}}</text>
+    <view class="like">
+      <text class="helight">{{movie.wish_count}}</text>
+      <text>人喜欢</text>
+      <text class="helight">{{movie.commentCount}}</text>
+      <text>条评论</text>
+    </view>
+    <image class='movie-img' src="{{movie.movieimg}}" data-src="{{movie.movieimg}}"></image>
+      <text class="mark">评分</text>
+     
+           <template is="starTemplate" data="{{stars:movie.stars,average:movie.score}}" />
+          <view class="flex-row">
+            <text class="mark">导演</text>
+            <text>{{movie.director.name}}</text>
+          </view>
+          <view class="flex-row">
+            <text>影人</text>
+            <text>{{movie.casts}}</text>
+          </view>
+          <view>
+            <text class='mark'>
+              剧情介绍
+            </text>
+            <text>{{movie.summary}}</text>
+          </view>
+          <view>
+            <text>演员</text>
+            <scroll-view scroll-x="true" style='width:100%'>
+                <block wx:for="{{movie.castsInfo}}" wx:for-item="item" wx:kwy="key">
+                    <view class="">
+                        <image src="{{item.img}}"></image>
+                        <text>{{item.name}}</text>
+                    </view>
+                </block>
+            </scroll-view>
+          </view>
+  </view>
+
+</view>
+
+ 
+
+
